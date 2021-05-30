@@ -1,31 +1,48 @@
-import java.util.Scanner;
-public class Date {
-private int date;//hide from outside the world
-//private is accessible in class only hidden outside the class
-private int month;
-private int year;
- 
+package package3;
 
-public void acceptInfo()
-{
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter date:");
-	date=sc.nextInt();// date,month,year are local variable inside the function
-	System.out.println("Enter month:");
-	month=sc.nextInt();
-	System.out.println("Enter year:");
-	year=sc.nextInt();
+    public class Date {
+	private int day;
+	private int month;
+	private int year;
 	
-}
-public void setDate(int date1)
-{
-	date=date1;
-}
-public void displayInfo()
-{
-	System.out.println("Date:"+date);
-	System.out.println("month="+month);
-	System.out.println("year="+year);
-}
-
+	
+	public Date()
+	{
+		System.out.println("_-----Default Constructor---------");
+		
+		
+	}
+	public Date(int day,int month,int year)
+	{
+		
+		System.out.println("-------parameterised constructor-----");
+		this.day=day;
+		this.month=month;
+		this.year=year;
+		
+	}
+	public void setDate(int day)
+	{
+		this.day=day;
+	}
+	public int getDay()
+	{
+		return day;
+	}
+	public int getMonth() {
+		return month;
+	}
+	public void setMonth(int month) {
+		this.month = month;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+	public void display()
+	{
+		System.out.println("Date="+day+"/"+month+"/"+year );
+	}
 }

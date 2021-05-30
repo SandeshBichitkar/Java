@@ -1,44 +1,57 @@
-import java.util.Scanner;
-public class Student {
+package package1;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-Scanner sc=new Scanner(System.in);
-int rollno;
-String name;
-int[] arr=new int[5];
-arr[0]=60;
-arr[1]=70;
-arr[2]=75;
-arr[3]=72;
-arr[4]=80;
-System.out.println("Enter roll no=");
-rollno=sc.nextInt();
-System.out.println("Roll  no="+rollno);
-System.out.println("Enter Name of Student=");
-name=sc.next();
-System.out.println("Name="+name);
-sc.close();
-int i,sum=0,total=500;
-float per;
-for(i=0;i<5;i++)
+public class Student {
+public int rollNo;
+public String name;
+private char grade;
+int totalMarks;
+
+public Student(int rollNo,String name,char grade,int totalMarks)
 {
-	sum=sum+arr[i];
+	System.out.println("------parameterised constructir---------");
+	this.rollNo=rollNo;
+	this.name=name;
+	this.grade=grade;
+	this.totalMarks=totalMarks;
 }
-System.out.println("Sum of marks="+sum);
-per=(sum/total)*100;
-if(per>75) {
-	System.out.println("Student get grade A");
+
+public int getRollNo() {
+	return rollNo;
 }
-else if(per<74&&per>60)
+
+public void setRollNo(int rollNo) {
+	this.rollNo = rollNo;
+}
+
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public char getGrade() {
+	return grade;
+}
+
+public void setGrade(char grade) {
+	this.grade = grade;
+}
+
+public int getTotalMarks() {
+	return totalMarks;
+}
+
+public void setTotalMarks(int totalMarks) {
+	this.totalMarks = totalMarks;
+}
+public void display()
 {
-	System.out.println("Student get grade B");
-	
+	System.out.println("rollNo="+rollNo);
+	System.out.println("name="+name);
+	System.out.println("grade="+grade);
+	System.out.println("totalMarks="+totalMarks);
 }
-else
-{
-	System.out.println("Student get grade C");
-}
-	}
 
 }

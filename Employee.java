@@ -1,48 +1,72 @@
-import java.util.Scanner;
+
 public class Employee {
-private int id;
+private int empid;
 private String name;
-private double basicSalary;
-private double hra;
-private double medical;
-private double pf;
-private double pt;
-private double netSalary;
-private double grossSalary;
- 
-public void acceptInfo()
+private double salary;
+private String add;
+
+public Employee()
 {
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter id=");
-	id=sc.nextInt();
-	System.out.println("Enter name=");
-	name=sc.next();
-	System.out.println("Enter basicSalary=");
-	basicSalary=sc.nextDouble();
-	System.out.println("Enter Medical=");
-	medical=sc.nextDouble();
-sc.close();
+	System.out.println("---------------default constructor invoking---------");
 }
-	private void calculateSalary()
-	{
-		hra=(basicSalary*50)/100;
-		pf=(basicSalary*12)/100;
-		pt=200.00;
-		grossSalary=basicSalary+medical+hra;
-		netSalary=grossSalary-(pt+pf);
-		
-		
-	}
-	public void displayInfo()
-	{
-		calculateSalary();
-		System.out.println("Employee id="+id);
-		System.out.println("Employee name="+name);
-		System.out.println("Employee basic salary="+basicSalary);	
-		System.out.println("Employee grossSalary="+grossSalary);
-		System.out.println("Employee netSalary="+netSalary);
-		
-		
-	}
+public Employee(int empid,String name,double salary,String add)
+{
+	this();
+	System.out.println("-------------Parameterised constructor invoking------");
+	this.empid=empid;
+	this.name=name;
+	this.salary=salary;
+	this.add=add;
+	
+}
+public void setEmpid(int empid)
+{
+	this.empid=empid;
+}
+public int getEmpid()
+{
+	return empid;
+}
+public void setName(String name)
+{
+this.name=name;	
+}
+public String getName()
+{
+	return name;
+}
+public void setAdd(String add)
+{
+	this.add=add;
+	
+}
+public String getadd()
+{
+	return add;
+}
+public void setSalary()
+{
+	this.salary=salary;
+}
+public double getSalary()
+{
+	return salary;
+}
+
+
+
+
+
+
+
+
+
+ public void display()
+ {
+	 System.out.println("empid="+empid);
+	 System.out.println("name="+name);
+	 System.out.println("salary="+salary);
+	 System.out.println("add="+add);
+ }
 
 }
